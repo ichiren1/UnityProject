@@ -3,18 +3,16 @@ using System.Collections;
 
 public class TrueBlock : MonoBehaviour {
 	public GameObject refObj;
-	void Start () {
 	
+	void Start () {
 	}
 
 	void Update () {
-	
 	}
 	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("Player")) {
-			refObj.GetComponent<Player>().getObjectNum++;
+		if (other.gameObject.CompareTag ("Player")) {
+			refObj.GetComponent<GamePointConter>().gamePoint++;
 			Destroy(this.gameObject);
-			Debug.Log (refObj.GetComponent<Player>().getObjectNum);
 		}
 	}
 
