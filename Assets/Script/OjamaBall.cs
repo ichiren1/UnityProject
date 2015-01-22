@@ -11,7 +11,7 @@ public class OjamaBall : MonoBehaviour {
 	void Start () {
 		AudioSource[] audioSources = GetComponents<AudioSource>();
 		bomb = audioSources[1];
-		//renderer.enabled = false;
+		renderer.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -28,9 +28,11 @@ public class OjamaBall : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other){
-		if(other.gameObject.CompareTag("Player")){
-			bomb.PlayOneShot(bomb.clip);
-			Application.LoadLevel("stage02");
+		if(!GameScoreTitle.isClear){
+			if(other.gameObject.CompareTag("Player")){
+				bomb.PlayOneShot(bomb.clip);
+				Application.LoadLevel("stage02");
+			}
 		}
 	}
 }

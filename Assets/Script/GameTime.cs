@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class GameTime : MonoBehaviour {
-	public float timer = 0; 
+	public static float timer; 
 	public GameObject refObj;
 	
 	void Start () {
+		timer = 0;
 	}
 	
 	void Update () {

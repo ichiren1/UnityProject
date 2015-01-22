@@ -36,7 +36,7 @@ public class GamePointConter : MonoBehaviour {
 	}
 	
 	private IEnumerator GoToStageSelect(){
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(5f);
 		Application.LoadLevel("stages");
 	}
 }

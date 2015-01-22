@@ -10,7 +10,7 @@ public class Floor : MonoBehaviour {
 	void Start () {
 		audioSource = gameObject.GetComponent<AudioSource>();
 		audioSource.clip = audioClip;
-		//renderer.enabled = false;
+		renderer.enabled = false;
 	}
 	
 	// Update is called once per frame
