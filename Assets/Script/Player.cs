@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public GameObject gameScoreTitle;
 	bool isHitCount;
 	public static int hp;
+	public static int TrueBlockNum;
 
 	AudioSource[] audioSources;
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour {
 		isHitCount = false;
 		hitCount = 0;
 		hp = 100;
+		TrueBlockNum = 1;
 	}
 
 	void Update () {
