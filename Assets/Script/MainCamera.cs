@@ -6,7 +6,7 @@ public class MainCamera : MonoBehaviour {
 	private GameObject player = null;
 	public Vector3 offset;
 	public float cameraRotate;
-	public bool isMenu;
+	public static bool isMenu;
 	
 	// Use this for initialization
 	void Start () {
@@ -34,6 +34,7 @@ public class MainCamera : MonoBehaviour {
 				isMenu = true;
 			}
 		}
+		
 		this.offset.x = 3*Mathf.Sin(this.cameraRotate);
 		this.offset.z = -3*Mathf.Cos(this.cameraRotate);
 		

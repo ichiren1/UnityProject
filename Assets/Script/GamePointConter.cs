@@ -4,7 +4,6 @@ using System.Collections;
 public class GamePointConter : MonoBehaviour {
 	public int gamePoint;
 	public int gameMaxPoint;
-	public GameObject refObj;
 	
 	// Use this for initialization
 	void Start () {
@@ -19,14 +18,17 @@ public class GamePointConter : MonoBehaviour {
 				this.guiText.text = "★";
 			}
 			if(gamePoint == gameMaxPoint){
-				refObj.GetComponent<GameScoreTitle>().isClear = true; 
-				StartCoroutine("GameClear");
+				GameScoreTitle.isClear = true; 
+				StartCoroutine("GoToGameTitle");
 			}
+		}
+		if(GameScoreTitle.isFail){
+			StartCoroutine("GoToGameTitle");
 		}
 	}
 	
-	private IEnumerator GameClear(){
-		yield return new WaitForSeconds(2f);
+	private IEnumerator GoToGameTitle(){
+		yield return new WaitForSeconds(3f);
 		Application.LoadLevel("title");
 	}
 }

@@ -12,8 +12,4 @@ public class FalseBlock : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	void OnCollisionEnter(){
-		Debug.Log ("Hello");
-	}
 }

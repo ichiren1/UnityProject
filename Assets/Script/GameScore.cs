@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class GameScore : MonoBehaviour {
-	public GameObject refObj;
 	
 	
 	void Start () {
@@ -10,9 +9,9 @@ public class GameScore : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(refObj.GetComponent<GameScoreTitle>().isClear){
+		if(GameScoreTitle.isClear || GameScoreTitle.isFail){
 			this.guiText.enabled = true;
-			this.guiText.text = "ぶつかった数" + 1 +"回";
+			this.guiText.text = "ぶつかった数" + Player.hitCount +"回";
 		}
 	}
 }

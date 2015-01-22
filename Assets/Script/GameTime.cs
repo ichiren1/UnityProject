@@ -9,7 +9,7 @@ public class GameTime : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(!refObj.GetComponent<GameScoreTitle>().isClear) //not clear
+		if(!GameScoreTitle.isClear) //not clear
 			timer += Time.deltaTime;
 		string minute;
 		if(timer/60 >= 10)

@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class TrueBlock : MonoBehaviour {
-	public GameObject refObj;
+	public GameObject gamePointCounter;
+	public GameObject player;
 	
 	void Start () {
 	}
@@ -11,7 +12,8 @@ public class TrueBlock : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			refObj.GetComponent<GamePointConter>().gamePoint++;
+			gamePointCounter.GetComponent<GamePointConter>().gamePoint++;
+			player.GetComponent<Player>().addGamePoint();
 			Destroy(this.gameObject);
 		}
 	}

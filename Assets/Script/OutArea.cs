@@ -16,9 +16,11 @@ public class OutArea : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		audioSource.Play();
-		if(other.CompareTag("Player")){
-			Application.LoadLevel (Application.loadedLevel); //
+		if(!GameScoreTitle.isClear){
+			audioSource.Play();
+			if(other.CompareTag("Player")){
+				Application.LoadLevel (Application.loadedLevel); //
+			}
 		}
 	}
 	

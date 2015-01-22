@@ -31,6 +31,7 @@ public class menu : MonoBehaviour {
 				audioSources[i].PlayOneShot(audioSources[i].clip);
 		}
 		if(GUI.Button (new Rect(Screen.width-120, Screen.height-50, 100, 30), "ゲームに戻る")){
+			MainCamera.isMenu = false;
 			DestroyObject(this.gameObject);
 		}
 	}
