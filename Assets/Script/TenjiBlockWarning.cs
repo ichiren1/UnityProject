@@ -8,6 +8,7 @@ public class TenjiBlockWarning : MonoBehaviour {
 	void Start () {
 		audioSource = gameObject.GetComponent<AudioSource>();
 		audioSource.clip = audioClip;
+		renderer.enabled = false;
 	}
 
 	void Update () {
@@ -15,7 +16,7 @@ public class TenjiBlockWarning : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-
+		audioSource.Play();
 	}
 
 	void OnTriggerExit(Collider other){
@@ -27,7 +28,8 @@ public class TenjiBlockWarning : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
 			if(Time.frameCount % 30 == 0){
-				audioSource.PlayOneShot(audioClip);
+				if(!audioSource.isPlaying)
+					audioSource.Play();
 			}
 		}
 	}

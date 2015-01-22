@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TenjiBlock2 : MonoBehaviour {
+public class TenjiBlockSafe : MonoBehaviour {
 	public AudioClip audioClip;
 	AudioSource audioSource;
 
 	void Start () {
 		audioSource = gameObject.GetComponent<AudioSource>();
 		audioSource.clip = audioClip;
+		renderer.enabled = false;
 	}
 
 	void Update () {
@@ -15,19 +16,20 @@ public class TenjiBlock2 : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-
+		audioSource.Play();
 	}
-
+	
 	void OnTriggerExit(Collider other){
 		if(other.gameObject.CompareTag("Player")){
 			audioSource.Stop();
 		}
 	}
-
+	
 	void OnTriggerStay(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
 			if(Time.frameCount % 30 == 0){
-				audioSource.PlayOneShot(audioClip);
+				if(!audioSource.isPlaying)
+					audioSource.Play();
 			}
 		}
 	}

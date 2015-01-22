@@ -6,6 +6,8 @@ public class GameScoreTitle : MonoBehaviour {
 	public static bool isFail;
 	
 	void Start () {
+		isClear = false;
+		isFail = false;
 		this.guiText.enabled = false;
 		this.guiText.text = "Stage Clear\nCongratulation!\n";
 	}
