@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TenjiBlock : MonoBehaviour {
+public class TenjiBlockWarning : MonoBehaviour {
 	public AudioClip audioClip;
 	AudioSource audioSource;
 
