@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Floor : MonoBehaviour {
-	public GameObject refObj;
 	public Player player;
 	public AudioClip audioClip;
 	AudioSource audioSource;

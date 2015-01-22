@@ -22,7 +22,9 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		if(this.transform.position.y < 0 && !audioSources[0].isPlaying ){
-			audioSources[0].Play();
+			if(hp > 0){
+				audioSources[0].Play();
+			}
 		}
 		if(hp <= 0){
 			GameScoreTitle.isFail = true;
