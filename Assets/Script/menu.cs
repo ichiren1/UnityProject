@@ -30,6 +30,10 @@ public class menu : MonoBehaviour {
 			if(GUI.Button(new Rect(20+(Screen.width-40)/3*(i%3), 40+(i/3)*50, (Screen.width-40)/3, 50), soundEffectNames[i]))
 				audioSources[i].PlayOneShot(audioSources[i].clip);
 		}
+		if(GUI.Button (new Rect(Screen.width-220, Screen.height-50, 100, 30), "タイトルに戻る")){
+			Application.LoadLevel("title");
+		}
+		
 		if(GUI.Button (new Rect(Screen.width-120, Screen.height-50, 100, 30), "ゲームに戻る")){
 			MainCamera.isMenu = false;
 			DestroyObject(this.gameObject);
