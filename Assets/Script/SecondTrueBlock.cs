@@ -9,7 +9,7 @@ public class SecondTrueBlock : MonoBehaviour {
 
 	
 	void Start () {
-		//renderer.enabled = false;
+		renderer.enabled = false;
 		audioSource = gameObject.GetComponent<AudioSource>();
 		audioSource.clip = audioClip;
 	}

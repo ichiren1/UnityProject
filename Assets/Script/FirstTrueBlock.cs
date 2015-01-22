@@ -8,7 +8,7 @@ public class FirstTrueBlock : MonoBehaviour {
 	AudioSource audioSource;
 
 	void Start () {
-		//renderer.enabled = false;
+		renderer.enabled = false;
 		audioSource = gameObject.GetComponent<AudioSource>();
 		audioSource.clip = audioClip;
 		audioSource.Play();
