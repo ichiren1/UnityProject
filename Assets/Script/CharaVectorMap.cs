@@ -9,7 +9,9 @@ public class CharaVectorMap : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		Debug.Log(player.transform.position);
 		this.transform.rotation = Quaternion.Euler(0, 0, -1*player.transform.eulerAngles.y+180);
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExitButton : MonoBehaviour {
+public class ExitButton2 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {

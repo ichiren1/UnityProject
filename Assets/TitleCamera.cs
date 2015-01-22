@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TitleCamera : MonoBehaviour {
+public class TitleCamera2 : MonoBehaviour {
 	GUILayer guiLayer;
 	void Start()
 	{
