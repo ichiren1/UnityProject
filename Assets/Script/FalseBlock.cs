@@ -5,7 +5,7 @@ public class FalseBlock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//renderer.enabled = false;
+		renderer.enabled = false;
 	}
 	
 	// Update is called once per frame

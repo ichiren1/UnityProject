@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		if(this.transform.position.y < 0 && !audioSources[0].isPlaying ){
-			if(hp > 0){
+			if(hp > 0 && !GameScoreTitle.isClear){
 				audioSources[0].Play();
 			}
 		}
@@ -33,11 +33,13 @@ public class Player : MonoBehaviour {
 	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit){
-		if(hit.gameObject.tag == "FalseBlock"){
+		if(hit.gameObject.tag == "FalseBlock" && !GameScoreTitle.isClear){
 			if(!isHitCount){
 				hitCount ++;
+				hit.gameObject.renderer.enabled = true;
 				audioSources[1].PlayOneShot(audioSources[1].clip);
 				StartCoroutine("waitHitCount");
+				StartCoroutine(falseBlockTime(hit));
 				if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){// run
 					hp -= 30;
 				}else{
@@ -55,5 +57,10 @@ public class Player : MonoBehaviour {
 	private IEnumerator waitHitCount(){
 		yield return new WaitForSeconds(1.5f);
 		isHitCount = false;
+	}
+	
+	private IEnumerator falseBlockTime(ControllerColliderHit hitObject){
+		yield return new WaitForSeconds(0.2f);
+		hitObject.gameObject.renderer.enabled = false;
 	}
 }
