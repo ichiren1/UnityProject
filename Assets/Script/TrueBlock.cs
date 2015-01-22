@@ -6,6 +6,7 @@ public class TrueBlock : MonoBehaviour {
 	public GameObject player;
 	
 	void Start () {
+		renderer.enabled = false;
 	}
 
 	void Update () {

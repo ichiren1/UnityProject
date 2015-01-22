@@ -11,6 +11,7 @@ public class OjamaBall : MonoBehaviour {
 	void Start () {
 		AudioSource[] audioSources = GetComponents<AudioSource>();
 		bomb = audioSources[1];
+		renderer.enabled = false;
 	}
 	
 	// Update is called once per frame
