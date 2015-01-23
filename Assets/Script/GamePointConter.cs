@@ -17,8 +17,9 @@ public class GamePointConter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(gamePoint > 0){
+			this.guiText.text = "";
 			for(int i=0; i < gamePoint; i++){
-				this.guiText.text = "★ ";
+				this.guiText.text += "★ ";
 			}
 			if(gamePoint == gameMaxPoint){
 				GameScoreTitle.isClear = true; 
@@ -31,11 +32,13 @@ public class GamePointConter : MonoBehaviour {
 	}
 	
 	private IEnumerator GoToGameTitle(){
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(2f);
 		Application.LoadLevel("title");
 	}
 	
 	private IEnumerator GoToStageSelect(){
+		if(gameMaxPoint > 3)
+			yield return new WaitForSeconds(4f);
 		yield return new WaitForSeconds(5f);
 		Application.LoadLevel("stages");
 	}

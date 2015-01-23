@@ -27,7 +27,7 @@ public class TenjiBlockWarning : MonoBehaviour {
 
 	void OnTriggerStay(Collider other){
 		if (other.gameObject.CompareTag ("Player")) {
-			if(Time.frameCount % 30 == 0){
+			if(!MainCamera.isMenu){
 				if(!audioSource.isPlaying)
 					audioSource.Play();
 			}

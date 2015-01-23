@@ -3,7 +3,7 @@ using System.Collections;
 
 public class menu : MonoBehaviour {
 	public Texture backgroundImage;
-	string[] soundEffectNames = {"ゴール", "振り子", "振り子にぶつかる","壁にぶつかる", "安全地帯", "危険地帯", "落下"};
+	string[] soundEffectNames = {"ゴール", "振り子", "振り子にぶつかる","壁にぶつかる", "安全地帯", "危険地帯", "落下", "ポイント獲得"};
 	AudioSource[] audioSources;
 
 	void Start () {

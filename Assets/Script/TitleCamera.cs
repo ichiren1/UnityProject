@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class TitleCamera : MonoBehaviour {
+	public GameObject title;
+	public GameObject startbutton;
+	public GameObject exitbutton;
+
 	GUILayer guiLayer;
 	void Start()
 	{
@@ -15,8 +19,11 @@ public class TitleCamera : MonoBehaviour {
 			//イベント処理
 			Debug.Log (hit.name);
 			if(hit.name == "StartButton"){
-				Application.LoadLevel(1);
-				Debug.Log("Hello");
+				title.guiText.enabled= false;
+				startbutton.guiText.enabled = false;
+				exitbutton.guiText.enabled = false;
+				Application.LoadLevelAdditive("stages");
+
 			}
 			if(hit.name == "ExitButton"){
 				Application.Quit();
